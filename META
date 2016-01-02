@@ -1,0 +1,10 @@
+version = "0.1"
+package "ppx" (
+  version = "0.1"
+  ppx = "./ppx_modular_selectors.native"
+)
+package "lib" (
+  version = "0.1"
+  archive(byte) = "modular_selectors.cma"
+  archive(native) = "modular_selectors.cmxa"
+)

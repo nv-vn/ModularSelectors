@@ -1,0 +1,26 @@
+Name: Modular Selectors
+Version: 0.1
+OCamlVersion: >= 4.02
+Synopsis: Library for choosing modules adhering to an interface
+Authors: nv-vn <nv@cock.li>
+License: GPL
+InstallType: custom (0.4)
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+XCustomInstall: ./install.sh
+XCustomUninstall: ocamlfind remove modular-selectors
+
+# Add findlib names
+
+Library "modular_selectors"
+  Path: src/lib/
+  Modules: ModularSelectors
+
+Executable "ppx_modular_selectors"
+  Path: src/syntax/
+  MainIs: ppx_modular_selectors.ml
+  CompiledObject: best
+  BuildDepends: compiler-libs.common, ppx_tools.metaquot

@@ -1,0 +1,16 @@
+Name: ModularSelector-Tests
+Version: 0.1
+OCamlVersion: >= 4.02
+Synopsis: Tests for Modular Selectors
+Authors: nv-vn <nv@cock.li>
+License: GPL
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Executable "simple_test"
+  Path: .
+  MainIs: simple_test.ml
+  Install: false
+  BuildDepends: modular-selectors.ppx, modular-selectors.lib
